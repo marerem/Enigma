@@ -106,3 +106,63 @@ Surface normals can be derived from depth data to enhance geometric understandin
 [Depth-to-Normal Estimation](https://github.com/baegwangbin/DSINE/blob/main/notes/depth_to_normal.ipynb)
 
 **Note**: The quality of surface estimation is directly dependent on the accuracy of the depth map. Enhancing depth predictions is critical for reliable surface normal estimation.
+
+Here’s a polished and structured version of the **Segmentation** section for your README.md:
+
+---
+
+### 4. Segmentation
+
+#### **Model**  
+`DeepLabV3`
+
+#### **Result**  
+![Segmentation Output](https://github.com/user-attachments/assets/5b2baf7c-8e18-4cd5-907b-3632786cc101)
+
+---
+
+#### **Analysis**
+
+The `DeepLabV3` model demonstrates strong performance in detecting common classes, such as people. However, when applied to robot-specific tasks, it faces significant limitations:
+
+1. **Lack of Robot-Specific Classes**  
+   - The pretrained model lacks classes specifically for robots or robotic components, resulting in poor segmentation for robotic objects.  
+   - While person detection performs well, the model struggles with robotic designs, especially for objects not covered in its training data.
+
+2. **Challenges with Drawings and Non-Standard Representations**  
+   - For scenes involving drawings or abstract representations of robots, the pretrained model often fails to produce meaningful segmentations.  
+   - The results are either mismatched to existing classes or fail to classify at all.
+
+---
+
+#### **Proposed Solution: Using SAM**  
+
+The [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything) offers a promising alternative. SAM provides robust semantic segmentation capabilities and demonstrates significant advantages:
+
+1. **Human Segmentation**  
+   - SAM performs exceptionally well in segmenting human-related features, producing clean and accurate masks.
+
+2. **Object Detection in Drawings**  
+   - While SAM may not classify robotic objects in drawings directly, it effectively identifies major objects within a scene.  
+   - These objects can be categorized into approximate classes, improving segmentation of abstract or non-standard visuals.
+
+---
+
+#### **Examples**
+
+##### 1. **Human Segmentation Results**
+![Result 1](https://github.com/user-attachments/assets/9d73cc84-8f4e-4a2e-af1f-6488a1984c5b)  
+![Result 2](https://github.com/user-attachments/assets/d6036b45-6434-45a7-8514-709f56c62d86)  
+
+##### 2. **Segmentation of Drawings**
+![Result 3](https://github.com/user-attachments/assets/4f5796e5-aecb-42d3-9799-be8506447eb5)  
+![Result 4](https://github.com/user-attachments/assets/073d247d-fedf-4504-9b37-22ae190838d5)  
+
+---
+
+### **Next Steps**  
+1. Fine-tune SAM or other segmentation models on datasets containing robot-specific and drawing-based representations.  
+2. Integrate SAM with post-processing to map segments into meaningful classes for robotic and abstract objects.  
+3. Explore hybrid models combining pretrained semantic segmentation with custom classes for improved performance.  
+
+
