@@ -4,12 +4,40 @@
 
 The **Eingma** project focuses on analyzing visual latent factors and their influence on perception and reaction. By dissecting scenes into smaller segments, we aim to better understand how contextual elements, such as prior experiences, visual stimuli, and auditory components, shape reactions. This is particularly relevant in scenarios where subjects (e.g., primates) encounter familiar or unfamiliar patterns.
 
+
 ---
-File structure 
-Enigma_CV_Scientist_Engineer.ipynb - contain Depth estimation, segmenation and object detection and its description
 
+### File Structure
 
+The repository is organized as follows:
 
+```
+├── Enigma_CV_Scientist_Engineer.ipynb
+├── SAM_automatic_mask_generator_example.ipynb
+```
+
+#### **Files and Descriptions**
+
+1. **Enigma_CV_Scientist_Engineer.ipynb**  
+   - Contains implementations and descriptions for:
+     - **Depth Estimation**: Using `MiDaS` with `DPT_Large` for scene depth analysis.  
+     - **Segmentation**: Includes `DeepLabV3` for object/person segmentation.  
+     - **Object Detection**: Implements `Faster R-CNN` for bounding box detection and object classification.  
+     - **Object Description**: Integrates **BLIP** (Bootstrapped Language-Image Pre-training) to generate natural language descriptions for detected objects, enhancing semantic understanding.
+
+2. **SAM_automatic_mask_generator_example.ipynb**  
+   - Demonstrates semantic segmentation using the **Segment Anything Model (SAM)**.  
+   - Focuses on automatic mask generation for diverse objects in images.  
+   - Useful for detailed scene parsing and ROI extraction.
+
+---
+
+### Note:
+- The **BLIP** model in `Enigma_CV_Scientist_Engineer.ipynb` generates textual descriptions for:
+  - Cropped Regions of Interest (ROIs) from object detection.
+  - Entire images, providing a contextual summary of the scene.
+
+---
 
 ## Solution Proposal
 
