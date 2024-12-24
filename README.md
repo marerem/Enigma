@@ -213,4 +213,66 @@ While traditional methods work well for general edge detection, their utility is
 2. Evaluate the effectiveness of combining edge detection results with depth maps to prioritize key objects in a scene.  
 3. Commit HED or similar advanced models only if edge-based features are shown to improve task-specific analysis.
 
+Here’s a polished and well-structured version of the **Object Detection** section for your README.md:
 
+---
+
+### 6. Object Detection
+
+#### **Example Output**  
+<img width="911" alt="Screenshot 2024-12-24 at 20 15 12" src="https://github.com/user-attachments/assets/aca72d03-8a4e-4ffd-a193-f7f45a575b2a" />
+
+---
+
+#### **Model and Process**
+
+1. **Model Loading**  
+   - A pre-trained Faster R-CNN model is used for object detection.  
+   - The model identifies objects in the image, providing:
+     - **Bounding Boxes**: Coordinates of detected objects.
+     - **Labels**: Predicted object names.
+     - **Confidence Scores**: Probabilities for each detection.
+
+---
+
+#### **Pipeline Steps**
+
+1. **Crop and Extract Detected Regions**  
+   - Utilize bounding box coordinates `(x1, y1, x2, y2)` to crop **Regions of Interest (ROIs)** from the original image.  
+   - ROIs allow further analysis on detected objects.
+
+2. **Classify Objects (Optional)**  
+   - If additional classification is required, pass cropped ROIs through a classification model such as:
+     - **ResNet**  
+     - **MobileNet**  
+   - This step categorizes objects into specific classes if the detection model doesn’t provide sufficient detail.
+
+3. **Generate Descriptions**  
+   - Use a pre-trained image captioning model to create natural language descriptions for each ROI. Example models include:
+     - **BLIP**  
+     - **CLIP**  
+     - **Show-and-Tell**  
+   - Descriptions can provide semantic context for detected objects.
+
+4. **Combine Results**  
+   - Annotate the original image with:
+     - Bounding boxes and object labels.  
+     - Textual descriptions for each detected object or ROI.  
+   - Optionally, generate a holistic description of the entire image using image captioning models like **BLIP**.
+
+---
+
+#### **Example Description using BLIP**
+
+**Scene Context**:  
+"This image depicts what looks like a sci-fi or futuristic scene featuring holographic figures. The figures are stylized in glowing neon outlines—one orange and the other blue—likely representing digital avatars, robots, or virtual constructs. These holographic structures are blocky and humanoid in shape, composed of wireframe cubes that outline their forms.
+
+The background suggests a high-tech or industrial environment, with complex machinery, wires, and components in a dimly lit, metallic setting. There are red laser-like points scattered throughout, adding a sense of high-tech ambiance."
+
+---
+
+#### **Future Enhancements**
+
+1. Integrate scene understanding using image captioning to describe the entire context of an image dynamically.  
+2. Fine-tune object detection models to include specific categories relevant to the domain (e.g., robots, machinery, futuristic elements).  
+3. Explore multimodal approaches combining object detection, captioning, and depth estimation for richer scene annotations.  
