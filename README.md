@@ -49,24 +49,6 @@ To efficiently analyze the data within the constraints of time and resources, a 
 
 This subset will be analyzed across various techniques to annotate and evaluate different modalities effectively.
 
-### 3.1 Geometric modalities (Depth Estimation)
-
-Resorse : https://github.com/isl-org/MiDaS
-Model : DPT_Large
-
-Result : ![combined_depth_frames-2](https://github.com/user-attachments/assets/d5177772-0d9e-407c-a802-f34b9b6ce071)
-
-MiDaS was trained on diverse datasets containing everyday scenes, landscapes, and objects. Robots might possess unique visual characteristics that are underrepresented or absent in MiDaS's training data. The model may struggle to generalize depth cues from robot-specific features, leading to inaccurate depth map. robots were not part of MiDaS's training datasets, the model lacks learned priors specific to robotic structures. Without prior knowledge of robot geometries, materials, and typical environments, MiDaS may misinterpret depth cues.Robots often feature intricate designs, moving parts, and reflective materials (like metal or glossy plastics). Reflective surfaces can distort perceived depth by causing inconsistent reflections, while complex geometries can confuse the model's ability to infer accurate depth relationships.Industrial environments where robots operate may have harsh lighting, shadows, or uneven illumination.Poor or inconsistent lighting can obscure depth cues such as texture gradients and shadows, which MiDaS relies on for depth estimation.Robots might have uniform textures or lack the rich texture variations present in natural scenes.Texture gradients are essential for monocular depth estimation. Uniform or artificial textures can deprive MiDaS of necessary cues to infer depth accurately.MiDaS performs depth estimation based solely on single images without temporal context.
-
-Solution : Fine-Tuning MiDaS on Robot-Specific Data, Integrating Multi-View or Temporal Information. Can use Multi-Frame (Video-Based) Depth Estimation Models like DeepV2D or DROID-SLAM to captute temproral domian.
-
-### 3.1* Geometric modalities (Surface Estimation)
-
-Based on depth we can estimate surface normal :https://github.com/baegwangbin/DSINE/blob/main/notes/depth_to_normal.ipynb
-But again quality will depedns on depth.
-Here’s a well-structured and polished version for your README.md:
-
----
 
 ### 3.1 Geometric Modalities: Depth Estimation
 
