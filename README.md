@@ -165,4 +165,52 @@ The [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-a
 2. Integrate SAM with post-processing to map segments into meaningful classes for robotic and abstract objects.  
 3. Explore hybrid models combining pretrained semantic segmentation with custom classes for improved performance.  
 
+Here’s a well-structured version of the **Edge Detection** section for your README.md:
+
+---
+
+### 5. Edge Detection
+
+#### **Overview**
+
+Edge detection is a critical preprocessing step in many computer vision tasks, particularly for feature extraction and object analysis. Various approaches can be applied, ranging from traditional methods to advanced deep learning-based models.
+
+---
+
+#### **Methods Explored**
+
+1. **Traditional Approaches**  
+   - **Gradient-based techniques**: Use image gradients to detect intensity changes at edges.  
+   - **Top-Hat filtering**: Enhances edges by subtracting a smoothed version of the image.  
+   - **Canny Edge Detection**: A widely used algorithm for precise edge localization.
+
+2. **Advanced Approaches**  
+   - **Holistically-Nested Edge Detection (HED)**:  
+     A deep learning-based method designed for high-quality edge detection.  
+     [GitHub Repository: HED](https://github.com/s9xie/hed)  
+
+---
+
+#### **Observations**
+
+While traditional methods work well for general edge detection, their utility is limited when applied to complex object-specific tasks. Similarly, advanced methods like HED require a deeper understanding and careful tuning to produce meaningful results.
+
+1. **Challenges**  
+   - Applying edge detection as a standalone process doesn’t directly contribute to meaningful object analysis, particularly for specific tasks involving robots or abstract objects.  
+   - Integrating edge detection with other modalities (e.g., depth estimation) could enhance its applicability.  
+
+2. **Proposed Use Case**  
+   - **Feature Extraction for Specific Objects**:  
+     Combine edge detection with depth-based object segmentation to detect and analyze specific objects, such as apples or balls, within a scene.  
+   - **Application in Experiments**:  
+     For example, edge detection can be used as part of a pipeline to analyze how a subject (e.g., a monkey) responds to visually distinct objects.  
+
+---
+
+#### **Next Steps**
+
+1. Focus on **integrating edge detection with depth and segmentation pipelines** for object-specific feature extraction.  
+2. Evaluate the effectiveness of combining edge detection results with depth maps to prioritize key objects in a scene.  
+3. Commit HED or similar advanced models only if edge-based features are shown to improve task-specific analysis.
+
 
