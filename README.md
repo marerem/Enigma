@@ -298,9 +298,7 @@ Here’s a polished and well-structured version of the **Object Detection** sect
 #### **Example Description using BLIP**
 
 **Scene Context**:  
-"This image depicts what looks like a sci-fi or futuristic scene featuring holographic figures. The figures are stylized in glowing neon outlines—one orange and the other blue—likely representing digital avatars, robots, or virtual constructs. These holographic structures are blocky and humanoid in shape, composed of wireframe cubes that outline their forms.
-
-The background suggests a high-tech or industrial environment, with complex machinery, wires, and components in a dimly lit, metallic setting. There are red laser-like points scattered throughout, adding a sense of high-tech ambiance."
+**"This image depicts what looks like a sci-fi or futuristic scene featuring holographic figures. The figures are stylized in glowing neon outlines—one orange and the other blue—likely representing digital avatars, robots, or virtual constructs. These holographic structures are blocky and humanoid in shape, composed of wireframe cubes that outline their forms.The background suggests a high-tech or industrial environment, with complex machinery, wires, and components in a dimly lit, metallic setting. There are red laser-like points scattered throughout, adding a sense of high-tech ambiance."**
 
 ---
 
