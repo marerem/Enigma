@@ -5,6 +5,11 @@
 The **Eingma** project focuses on analyzing visual latent factors and their influence on perception and reaction. By dissecting scenes into smaller segments, we aim to better understand how contextual elements, such as prior experiences, visual stimuli, and auditory components, shape reactions. This is particularly relevant in scenarios where subjects (e.g., primates) encounter familiar or unfamiliar patterns.
 
 ---
+File structure 
+Enigma_CV_Scientist_Engineer.ipynb - contain Depth estimation, segmenation and object detection and its description
+
+
+
 
 ## Solution Proposal
 
